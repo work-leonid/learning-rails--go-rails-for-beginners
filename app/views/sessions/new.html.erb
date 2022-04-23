@@ -1,0 +1,14 @@
+<h1>Sign In</h1>
+
+<%= form_with url: sign_in_path do |form| %>
+  <div class="flex flex-col gap-2">
+    <%= form.label :email %>
+    <%= form.text_field :email, placeholder: 'email@email.com', class: 'border p-2 rounded-md w-full' %>
+  </div>
+  <div class="flex flex-col gap-2 mb-3">
+    <%= form.label :password %>
+    <%= form.password_field :password, placeholder: 'password', class: 'border p-2 rounded-md w-full' %>
+  </div>
+
+  <%= form.submit 'Sign In', class: 'bg-sky-600 text-white rounded-md p-3' %>
+<% end %>
