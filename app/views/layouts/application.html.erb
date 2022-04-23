@@ -10,9 +10,10 @@
 </head>
 
 <body>
-<%= render partial: "shared/navbar" %>
-<main class="container mx-auto p-5">
-  <%= yield %>
-</main>
+  <%= render partial: "shared/navbar" %>
+  <main class="container mx-auto p-5">
+    <%= render partial: "shared/flash" %>
+    <%= yield %>
+  </main>
 </body>
 </html>
