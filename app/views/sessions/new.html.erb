@@ -1,12 +1,15 @@
 <h1 class="text-3xl font-bold mb-10">Sign In</h1>
 
 <%= form_with url: sign_in_path do |form| %>
-  <div class="flex flex-col gap-2">
+  <div class="flex flex-col gap-2 mb-3">
     <%= form.label :email %>
     <%= form.text_field :email, placeholder: 'email@email.com', class: 'border p-2 rounded-md w-full' %>
   </div>
   <div class="flex flex-col gap-2 mb-3">
+    <div class="flex justify-between">
     <%= form.label :password %>
+    <%= link_to 'Forgot password?', password_reset_path, class: 'text-sky-500' %>
+    </div>
     <%= form.password_field :password, placeholder: 'password', class: 'border p-2 rounded-md w-full' %>
   </div>
 

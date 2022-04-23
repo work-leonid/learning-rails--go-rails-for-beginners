@@ -1,0 +1,10 @@
+<h1 class="text-3xl font-bold mb-10">Forget password?</h1>
+
+<%= form_with url: password_reset_path do |form| %>
+  <div class="flex flex-col gap-2 mb-3">
+    <%= form.label 'Reset password' %>
+    <%= form.text_field :email, placeholder: 'email@mail.com', class: 'border p-2 rounded-md w-full' %>
+  </div>
+
+  <%= form.submit 'Reset password', class: 'bg-sky-600 text-white rounded-md p-3' %>
+<% end %>
