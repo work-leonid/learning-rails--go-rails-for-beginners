@@ -1,11 +1,27 @@
-<nav class="flex gap-5 py-5 px-5 bg-slate-100">
-  <a href="/" class="font-bold uppercase">My App</a>
-  <ul class="flex gap-5">
-    <li>
-      <%= link_to 'Home', root_path %>
-    </li>
-    <li>
-      <%= link_to 'About', about_path, class: '' %>
-    </li>
+<nav class="flex gap-5 justify-between py-5 px-5 bg-slate-100">
+  <div class="flex gap-5">
+    <a href="/" class="font-bold uppercase">My App</a>
+    <ul class="flex gap-3">
+      <li>
+        <%= link_to 'Home', root_path %>
+      </li>
+      <li>
+        <%= link_to 'About', about_path, class: '' %>
+      </li>
+    </ul>
+  </div>
+  <ul class="flex gap-3">
+    <% if Current.user %>
+      <li>
+        <%= Current.user.email %></li>
+      <%= button_to 'Logout', logout_path, method: :delete %>
+    <% else %>
+      <li>
+        <%= link_to 'Sign Up', sign_up_path %>
+      </li>
+      <li>
+        <%= link_to 'Sign In', sign_in_path %>
+      </li>
+    <% end %>
   </ul>
 </nav>
