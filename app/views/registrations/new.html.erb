@@ -1,17 +1,24 @@
 <h1 class="text-3xl font-bold mb-10">Sign up</h1>
 
 <%= form_with model: @user, url: sign_up_path, class: 'max-w-xl space-y-5' do |form| %>
+  <% if @user.errors.any? %>
+    <div class="bg-red-100 p-5 text-red-800">
+      <% @user.errors.full_messages.each do |message| %>
+     <p><%= message %></p>
+      <% end %>
+    </div>
+  <% end %>
   <div class="flex flex-col gap-2">
     <%= form.label :email %>
-    <%= form.text_field :email, placeholder: 'email@email.com', class: 'border p-2 rounded-md' %>
+    <%= form.text_field :email, placeholder: 'email@email.com', class: 'border p-2 rounded-md w-full' %>
   </div>
   <div class="flex flex-col gap-2">
     <%= form.label :password %>
-    <%= form.password_field :password, placeholder: 'password', class: 'border p-2 rounded-md' %>
+    <%= form.password_field :password, placeholder: 'password', class: 'border p-2 rounded-md w-full' %>
   </div>
   <div class="flex flex-col gap-2">
     <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation, placeholder: 'confirm your password', class: 'border p-2 rounded-md' %>
+    <%= form.password_field :password_confirmation, placeholder: 'confirm your password', class: 'border p-2 rounded-md w-full' %>
   </div>
   <%= form.submit class: 'bg-sky-600 text-white rounded-md p-3' %>
 <% end %>
