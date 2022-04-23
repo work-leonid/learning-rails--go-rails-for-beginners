@@ -2,10 +2,10 @@
   <a href="/" class="font-bold uppercase">My App</a>
   <ul class="flex gap-5">
     <li>
-      <a href="/">Home</a>
+      <%= link_to 'Home', root_path %>
     </li>
     <li>
-      <a href="/about">About</a>
+      <%= link_to 'About', about_path, class: '' %>
     </li>
   </ul>
 </nav>
