@@ -13,7 +13,7 @@
   <ul class="flex gap-3">
     <% if Current.user %>
       <li>
-        <%= Current.user.email %></li>
+        <%= link_to Current.user.email, edit_password_path %></li>
       <%= button_to 'Logout', logout_path, method: :delete %>
     <% else %>
       <li>
