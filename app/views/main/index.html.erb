@@ -1,1 +1,7 @@
 <h1>Welcome to scheduled tweets</h1>
+
+<% if @user %>
+  <div class="inline-block text-green-500">
+    <%= @user.email %>
+  </div>
+<% end %>
